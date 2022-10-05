@@ -1,0 +1,662 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300;400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+#desktop-deep-earth {
+  background-image: url(/images/desktop/image-deep-earth.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#desktop-night-arcade {
+  background-image: url(/images/desktop/image-night-arcade.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#desktop-soccer {
+  background-image: url(/images/desktop/image-soccer-team.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#desktop-grid {
+  background-image: url(/images/desktop/image-grid.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#desktop-up-above {
+  background-image: url(/images/desktop/image-from-above.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#desktop-pocket {
+  background-image: url(/images/desktop/image-pocket-borealis.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#desktop-curiosity {
+  background-image: url(/images/desktop/image-curiosity.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#desktop-fisheye {
+  background-image: url(/images/desktop/image-fisheye.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#mobile-deep-earth {
+  background-image: url("/images/mobile/image-deep-earth.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#mobile-night-arcade {
+  background-image: url("/images/mobile/image-night-arcade.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#mobile-soccer {
+  background-image: url("/images/mobile/image-soccer-team.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#mobile-grid {
+  background-image: url("/images/mobile/image-grid.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#mobile-up-above {
+  background-image: url("/images/mobile/image-from-above.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#mobile-pocket {
+  background-image: url("/images/mobile/image-pocket-borealis.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#mobile-curiosity {
+  background-image: url("/images/mobile/image-curiosity.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#mobile-fisheye {
+  background-image: url("/images/mobile/image-fisheye.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#ham-icon {
+  margin: auto 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+#ham-icon div {
+  width: 60px;
+  height: 4px;
+  background-color: #fff;
+  margin: 3px 0;
+  transition: 0.4s;
+  z-index: 10;
+}
+
+.ham-container {
+  width: 100%;
+}
+
+/*will rotate counterclockwise once user presses the icon which will form an X along with bar2*/
+.open .bar1 {
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+.open .bar2 {
+  opacity: 0;
+}
+.open .bar3 {
+  transform: rotate(45deg) translate(-6px, -8px);
+}
+.open .mobile-menu {
+  display: flex;
+  flex-direction: column; /*stacks each link on top of each other on mobile*/
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 3;
+  height: 100vh;
+  margin: 0 auto;
+  top: 0;
+  width: 100%;
+  right: 0;
+  box-shadow: -1px 9px 90px 180px rgba(45, 50, 77, 0.3490196078);
+  border-radius: 4px;
+  padding: 32px 0;
+  list-style: none;
+  font-family: "Josefin Sans", sans-serif;
+  background-color: hsl(0deg, 0%, 0%);
+}
+.open .mobile-menu li {
+  padding: 0.5rem;
+  text-transform: uppercase;
+}
+.open .mobile-menu li a {
+  color: hsl(0deg, 0%, 100%);
+  font-weight: 300;
+  font-size: 1.75rem;
+}
+
+/*once user opens the icon the links will display in a stacked view*/
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 50px; /*fixed height of header*/
+  left: 0;
+  height: calc(70vh - 50px); /*takes the full remaining space of site hence width 100. set the height to 100 and subtract it from the height of header*/
+  width: 100%;
+  margin-top: 10px;
+  font-size: 1.5rem;
+  /*sets the background of the menu once user opens the icon. I want to make this transition more seamless. (future update)*/
+  background-color: white;
+}
+.mobile-menu a {
+  color: #000;
+}
+.mobile-menu li {
+  margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 390px) {
+  .mobile-nav {
+    height: 100vh;
+    background-image: url("/images/mobile/image-hero.jpg");
+    -o-object-fit: cover;
+       object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+  }
+  .mobile-nav__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+  .mobile-nav__bar .mobile-logo {
+    margin-top: 40px;
+    z-index: 10;
+  }
+  .mobile-nav__bar .ham-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+  }
+  .mobile-nav .intro-container {
+    font-family: "Josefin Sans", sans-serif;
+    color: hsl(0deg, 0%, 100%);
+    text-transform: uppercase;
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    height: inherit;
+    justify-content: center;
+  }
+  .mobile-nav .intro-container h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    width: 80%;
+    border: 2px solid hsl(0deg, 0%, 100%);
+    height: 30%;
+    padding: 27px;
+    display: flex;
+    align-items: center;
+  }
+  .interactive-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 96px;
+    gap: 48px;
+    margin-bottom: 105px;
+  }
+  .interactive-content__img__mobile {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .interactive-content__img__mobile img {
+    width: 100%;
+  }
+  .interactive-content__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 50%;
+    gap: 32px;
+  }
+  .interactive-content__description h2 {
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 300;
+    color: hsl(0deg, 0%, 0%);
+    text-transform: uppercase;
+    width: 80%;
+    font-size: 2.25rem;
+    text-align: center;
+  }
+  .interactive-content__description p {
+    font-family: "Alata", sans-serif;
+    color: hsl(0deg, 0%, 55%);
+    width: 80%;
+    text-align: center;
+    line-height: 1.75rem;
+  }
+  .mobile-creations {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .mobile-creations__intro {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    font-family: "Josefin Sans", sans-serif;
+  }
+  .mobile-creations__intro h2 {
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 2.25rem;
+  }
+  .mobile-creations__grid {
+    display: grid;
+    grid-template-rows: repeat(8, 120px);
+    grid-template-columns: auto;
+    gap: 24px;
+    margin-top: 55px;
+    margin-bottom: 35px;
+  }
+  .mobile-creations__grid__items {
+    position: relative;
+  }
+  .mobile-creations__grid__items h3 {
+    position: absolute;
+    font-family: "Josefin Sans", sans-serif;
+    color: hsl(0deg, 0%, 100%);
+    font-weight: 300;
+    text-transform: uppercase;
+    left: 7%;
+    right: 70%;
+    top: calc(50% - 20.52px + 13.48px);
+    width: 45%;
+    font-size: 1.5rem;
+  }
+  .mobile-creations .mobile-see-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .mobile-creations .mobile-see-all button {
+    width: 157px;
+    height: 40px;
+    background-color: hsl(0deg, 0%, 100%);
+    border: 1px solid hsl(0deg, 0%, 0%);
+    text-transform: uppercase;
+    font-family: "Josefin Sans", sans-serif;
+    letter-spacing: 0.3rem;
+    font-weight: 300;
+    transition: all 300ms ease-in;
+    color: hsl(0deg, 0%, 0%);
+  }
+  .mobile-creations .mobile-see-all button:hover, .mobile-creations .mobile-see-all button:focus {
+    background-color: hsl(0deg, 0%, 0%);
+    color: hsl(0deg, 0%, 100%);
+  }
+  .footer-container {
+    width: 100%;
+    background-color: hsl(0deg, 0%, 0%);
+    height: 60vh;
+    margin-top: 96px;
+  }
+  .footer-container .footer-bar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    width: 75%;
+    justify-content: space-evenly;
+    margin: 0 auto;
+  }
+  .footer-container .footer-bar .footer-logo {
+    margin-top: 56px;
+  }
+  .footer-container .footer-bar .footer-list {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .footer-container .footer-bar .footer-list ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style: none;
+    height: 100%;
+  }
+  .footer-container .footer-bar .footer-list ul li {
+    font-family: "Josefin Sans", sans-serif;
+  }
+  .footer-container .footer-bar .footer-list ul li a {
+    color: hsl(0deg, 0%, 100%);
+  }
+  .footer-container .footer-bar .logo-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50%;
+    margin: 0 auto;
+  }
+  .footer-container .footer-bar .rights {
+    color: hsl(0deg, 0%, 55%);
+    width: 100%;
+    text-align: center;
+    font-family: "Josefin Sans", sans-serif;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+  .attribution {
+    margin: 2rem auto;
+    text-align: center;
+    font-family: "Josefin Sans", sans-serif;
+  }
+  .nav-list {
+    display: none;
+  }
+  .interactive-content__img__desktop {
+    display: none;
+  }
+  .interactive-content__description__desktop {
+    display: none;
+  }
+  .desktop-creations {
+    display: none;
+  }
+  .desktop-footer-bar {
+    display: none;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .mobile-nav .intro-container h1 {
+    font-size: 2.75rem;
+    width: 70%;
+    height: 35%;
+  }
+  .footer-bar {
+    gap: 0.5rem;
+  }
+  .footer-bar .footer-list ul {
+    gap: 1rem;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .nav-list {
+    display: block;
+    justify-content: space-evenly;
+    background-image: url("/images/desktop/image-hero.jpg");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .nav-list__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .nav-list__bar__logo {
+    margin-top: 64px;
+  }
+  .nav-list__bar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    width: 35%;
+    margin-top: 64px;
+  }
+  .nav-list__bar ul li a {
+    font-family: "Josefin Sans", sans-serif;
+    color: hsl(0deg, 0%, 100%);
+    padding-bottom: 0.5rem;
+    transition: all 200ms ease-in;
+  }
+  .nav-list__bar ul li a:hover {
+    border-bottom: 2px solid hsl(0deg, 0%, 100%);
+  }
+  .nav-list .desktop-intro-container {
+    width: 100%;
+    font-family: "Josefin Sans", sans-serif;
+    position: relative;
+  }
+  .nav-list .desktop-intro-container h1 {
+    font-weight: 300;
+    color: hsl(0deg, 0%, 100%);
+    text-transform: uppercase;
+    font-size: 4rem;
+    width: 45%;
+    position: absolute;
+    left: 15.75%;
+    top: 6rem;
+    padding: 40px;
+    border: 2px solid hsl(0deg, 0%, 100%);
+  }
+  .interactive-content {
+    position: relative;
+    margin-bottom: 185px;
+  }
+  .interactive-content .interactive-content__description__desktop {
+    display: block;
+    width: 50%;
+    position: absolute;
+    background-color: hsl(0deg, 0%, 100%);
+    top: 40%;
+    left: 50%;
+    height: 65%;
+  }
+  .interactive-content .interactive-content__description__desktop__content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    width: 80%;
+    font-family: "Josefin Sans", sans-serif;
+    margin: 0 auto;
+    padding-top: 96px;
+    padding-left: 96px;
+  }
+  .interactive-content .interactive-content__description__desktop__content h2 {
+    font-size: 3rem;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+  .interactive-content .interactive-content__description__desktop__content p {
+    color: hsl(0deg, 0%, 55%);
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+  .desktop-creations {
+    display: block;
+  }
+  .desktop-creations__intro {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Josefin Sans", sans-serif;
+  }
+  .desktop-creations__intro h2 {
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 3rem;
+  }
+  .desktop-creations__intro__btn__container button {
+    width: 157px;
+    height: 40px;
+    background-color: hsl(0deg, 0%, 0%);
+    font-family: "Josefin Sans", sans-serif;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: hsl(0deg, 0%, 100%);
+    border: none;
+    letter-spacing: 5px;
+    line-height: 14px;
+    transition: all 250ms ease-in-out;
+  }
+  .desktop-creations__intro__btn__container button:hover {
+    cursor: pointer;
+    background-color: hsl(0deg, 0%, 100%);
+    border: 1px solid hsl(0deg, 0%, 0%);
+    color: hsl(0deg, 0%, 0%);
+  }
+  .desktop-creations__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 256px);
+    grid-template-rows: repeat(2, 450px);
+    width: 80%;
+    margin: 0 auto;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 84px;
+  }
+  .desktop-creations__grid__items {
+    position: relative;
+    transition: all 250ms ease-in;
+  }
+  .desktop-creations__grid__items h3 {
+    position: absolute;
+    font-family: "Josefin Sans", sans-serif;
+    color: hsl(0deg, 0%, 100%);
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 2rem;
+    width: 70%;
+    left: 16%;
+    right: 45%;
+    top: calc(50% - 32px + 161px);
+    z-index: 10;
+  }
+  .desktop-creations__grid__items:hover {
+    cursor: pointer;
+    opacity: 0.5;
+    background-color: hsl(0deg, 0%, 100%);
+  }
+  .footer-container {
+    height: 25vh;
+  }
+  .footer-container .footer-bar {
+    display: none;
+  }
+  .footer-container .desktop-footer-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    margin-left: 165px;
+    margin-right: 165px;
+  }
+  .footer-container .desktop-footer-bar__content__1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+  }
+  .footer-container .desktop-footer-bar__content__1__list {
+    display: flex;
+    align-items: center;
+    font-family: "Josefin Sans", sans-serif;
+    list-style: none;
+    gap: 32px;
+  }
+  .footer-container .desktop-footer-bar__content__1__list li a {
+    color: hsl(0deg, 0%, 100%);
+    transition: all 200ms ease-in;
+    padding-bottom: 0.5rem;
+  }
+  .footer-container .desktop-footer-bar__content__1__list li a:hover {
+    border-bottom: 2px solid hsl(0deg, 0%, 100%);
+  }
+  .footer-container .desktop-footer-bar__content__2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+  }
+  .footer-container .desktop-footer-bar__content__2__links {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .footer-container .desktop-footer-bar__content__2__links a {
+    transition: all 200ms ease-in;
+    padding-bottom: 0.3rem;
+  }
+  .footer-container .desktop-footer-bar__content__2__links a:hover {
+    border-bottom: 2px solid hsl(0deg, 0%, 100%);
+  }
+  .footer-container .desktop-footer-bar__content__2__rights {
+    color: hsl(0deg, 0%, 55%);
+    font-family: "Josefin Sans", sans-serif;
+  }
+  .mobile-nav {
+    display: none;
+  }
+  .mobile-creations {
+    display: none;
+  }
+  .interactive-content__description {
+    display: none;
+  }
+  .interactive-content__img__mobile {
+    display: none;
+  }
+  .interactive-content__img__desktop {
+    display: block;
+    position: relative;
+    right: 15%;
+  }
+}/*# sourceMappingURL=styles.css.map */
